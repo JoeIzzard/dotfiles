@@ -1,0 +1,6 @@
+# Dotfiles Path
+export DOTFILES="~/.dotfiles"
+
+# Add Bin to Path
+export PATH=$DOTFILES/bin:$PATH
+
