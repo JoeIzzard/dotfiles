@@ -1,0 +1,17 @@
+# Initial Path
+export PATH="/usr/local/opt/python/libexec/bin:$PATH"
+
+# Path to your oh-my-zsh installation.
+export ZSH="/Users/joe/.oh-my-zsh"
+
+# Load dotfiles
+source ~/.dotfiles/.load
+
+# ZSH_Config
+ZSH_THEME="agnoster"
+
+# Plugins
+plugins=(git)
+
+# Load Oh My ZSH
+source $ZSH/oh-my-zsh.sh
