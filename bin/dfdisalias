@@ -1,0 +1,65 @@
+#!/bin/bash
+
+#!/bin/bash
+
+# Help
+showHelp() {
+    echo "dfdisalias"
+    echo "Version 1.0.0"
+    echo "--------------------"
+    echo ""
+    echo "dfdisalias is used to disable enabled aliases, use it in the manner:"
+    echo ""
+    echo "dfdisalias {arguments} aliasName"
+    echo ""
+    echo "Available Arguments"
+    echo "--------------------"
+    echo "-help"
+    echo "          Shows this help dialog"
+    echo "-enabled"
+    echo "          Lists all enabled aliases"
+}
+
+# Enabled
+showEnabled() {
+    echo "The Following Aliases are Enabled:"
+    echo ""
+    for entry in `ls ~/.dotfiles/Aliases/Enabled`
+    do
+        echo "- ${entry%.*}"
+    done
+    echo ""
+}
+
+# Disabled
+disAlias() {
+    echo "[Dot File Alias Disabler] Disabling $1..."
+
+    # Does it exist?
+    if [ -e ~/.dotfiles/Aliases/Enabled/$1.sh ]; then
+        rm ~/.dotfiles/Aliases/Enabled/$1.sh
+        echo "[Dot File Alias Disabler] Alias Disabled"
+        echo ""
+    else
+        echo "[Dot File Alias Disabler] Alias not found, skipping."
+        echo ""
+    fi
+}
+
+# Check we have an argument
+if [ $# = 0 ]; then
+    showHelp
+else
+    # Check for important arguments
+    arg=$1
+    if [ $arg == "-help" ]; then
+        showHelp
+    elif [ $arg == "-enabled" ]; then
+        showEnabled
+    else
+        for var in "$@"
+        do
+            disAlias $var
+        done
+    fi
+fi
