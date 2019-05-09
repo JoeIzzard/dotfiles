@@ -81,6 +81,8 @@ enAlias() {
     if [ -e ~/.dotfiles/Aliases/Available/$1/$1.sh ]; then
         ln -s ~/.dotfiles/Aliases/Available/$1/$1.sh ~/dotfiles/Aliases/Enabled/$1.sh
         echo "[Dot File Alias Enabler] Alias Enabled"
+        source ~/dotfiles/Aliases/Enabled/$1.sh
+        echo "[Dot File Alias Enabler] Sourced."
         echo ""
     else
         echo "[Dot File Alias Enabler] Alias not found, skipping."
