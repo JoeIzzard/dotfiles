@@ -1,0 +1,111 @@
+#!/bin/bash
+
+# Help
+showHelp() {
+    echo "dfenalias"
+    echo "Version 1.0.0"
+    echo "--------------------"
+    echo ""
+    echo "dfenalias is used to enable available aliases, use it in the manner:"
+    echo ""
+    echo "dfenalias {arguments} aliasName"
+    echo ""
+    echo "Available Arguments"
+    echo "--------------------"
+    echo "-help"
+    echo "          Shows this help dialog"
+    echo "-available"
+    echo "          Lists available aliases"
+    echo "-enabled"
+    echo "          Lists all enabled aliases"
+}
+
+# Available
+showAvailable() {
+    echo "The Following Aliases are available:"
+    echo ""
+    local brokendirs=0
+    local broken=()
+
+    for entry in `ls ~/.dotfiles/Aliases/Available`
+    do
+        if [ -e ~/.dotfiles/Aliases/Available/$entry/$entry.sh ]; then
+            echo "- $entry"
+        else
+            echo "B - $entry"
+            broken[${#broken[@]}]=$entry
+            brokendirs=1
+        fi
+    done
+
+    echo ""
+
+    if [ $brokendirs = 1 ]; then
+        echo "Some Aliases appear to be broken, Aliases should be of the structure:"
+        echo ""
+        echo "Available/"
+        echo "     -> AliasName/"
+        echo "          -> AliasName.sh"
+        echo ""
+        echo "It may be that you have put the Alias file directly in the Available folder, where they are required to be in a directory of the same name." 
+        echo "Or it could be that the .sh file is missing."
+        echo "It is important that both the directory and the .sh file have the same name."
+        echo ""
+        echo "The Following Broken Aliases were found:"
+        echo ""
+
+        for brok in "${broken[@]}"
+        do
+            echo "- $brok"
+        done
+        echo ""
+    fi
+}
+
+# Enabled
+showEnabled() {
+    echo "The Following Aliases are Enabled:"
+    echo ""
+    for entry in `ls ~/.dotfiles/Aliases/Enabled`
+    do
+        echo "- ${entry%.*}"
+    done
+    echo ""
+}
+
+# Enable 
+enAlias() {
+    echo "[Dot File Alias Enabler] Enabling $1..."
+
+    # Does it exist?
+    if [ -e ~/.dotfiles/Aliases/Available/$1/$1.sh ]; then
+        ln -s ~/.dotfiles/Aliases/Available/$1/$1.sh ~/dotfiles/Aliases/Enabled/$1.sh
+        echo "[Dot File Alias Enabler] Alias Enabled"
+        source ~/dotfiles/Aliases/Enabled/$1.sh
+        echo "[Dot File Alias Enabler] Sourced."
+        echo ""
+    else
+        echo "[Dot File Alias Enabler] Alias not found, skipping."
+        echo ""
+    fi
+}
+
+# Check we have an argument
+if [ $# = 0 ]; then
+    showHelp
+else
+    # Check for important arguments
+    arg=$1
+    if [ $arg == "-help" ]; then
+        showHelp
+    elif [ $arg == "-available" ]; then
+        showAvailable
+    elif [ $arg == "-enabled" ]; then
+        showEnabled
+    else
+        for var in "$@"
+        do
+            enAlias $var
+        done
+    fi
+fi
