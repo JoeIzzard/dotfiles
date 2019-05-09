@@ -6,3 +6,8 @@ export PATH=$DOTFILES/bin:$PATH
 
 # Load the Aliases System
 source ~/.dotfiles/Aliases/load.sh
+
+# Load the extras file if it exists
+if [ -e ~/.dotfiles/.extras ]; then
+    source ~/.dotfiles/.extras
+fi
