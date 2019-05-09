@@ -1,8 +1,5 @@
-# Dotfiles Path
-export DOTFILES="~/.dotfiles"
-
 # Add Bin to Path
-export PATH=$DOTFILES/bin:$PATH
+export PATH=$~/.dotfiles/bin:$PATH
 
 # Load the Aliases System
 source ~/.dotfiles/Aliases/load.sh
