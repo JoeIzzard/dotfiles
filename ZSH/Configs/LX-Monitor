@@ -1,0 +1,14 @@
+# Path to your oh-my-zsh installation.
+export ZSH="/home/joe/.oh-my-zsh"
+
+# Load dotfiles
+source ~/.dotfiles/.load
+
+# ZSH_Config
+ZSH_THEME="agnoster"
+
+# Plugins
+plugins=(git)
+
+# Load Oh My ZSH
+source $ZSH/oh-my-zsh.sh
