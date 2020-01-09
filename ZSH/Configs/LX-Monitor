@@ -1,5 +1,6 @@
 # Path to your oh-my-zsh installation.
 export ZSH="/home/joe/.oh-my-zsh"
+export PATH=/home/monitor/LX-Monitor/Bin:$PATH
 
 # Load dotfiles
 source ~/.dotfiles/.load
