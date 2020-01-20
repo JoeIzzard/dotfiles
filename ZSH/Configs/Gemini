@@ -1,7 +1,7 @@
 # Path to your oh-my-zsh installation.
 export ZSH="/home/joe/.oh-my-zsh"
 
-export PATH="/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
+export PATH="/usr/bin:/bin:/usr/sbin:/sbin:~/dotfiles/Lib/Submodules/Useful-Scripts/Bin:$PATH"
 
 # Disable EOL Mark
 export PROMPT_EOL_MARK=''
