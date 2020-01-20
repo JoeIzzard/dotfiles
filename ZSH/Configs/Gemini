@@ -3,6 +3,9 @@ export ZSH="/home/joe/.oh-my-zsh"
 
 export PATH="/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
 
+# Disable EOL Mark
+export PROMPT_EOL_MARK=''
+
 # Load dotfiles
 source ~/.dotfiles/.load
 
