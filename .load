@@ -1,10 +1,10 @@
 # Add Bin to Path
-export PATH=$~/.dotfiles/bin:$PATH
+export PATH="$HOME/.dotfiles/bin:$PATH"
 
 # Load the Aliases System
-source ~/.dotfiles/Aliases/load.sh
+source $HOME/.dotfiles/Aliases/load.sh
 
 # Load the extras file if it exists
-if [ -e ~/.dotfiles/.extras ]; then
-    source ~/.dotfiles/.extras
+if [ -e $HOME/.dotfiles/.extras ]; then
+    source $HOME/.dotfiles/.extras
 fi

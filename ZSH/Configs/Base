@@ -8,7 +8,7 @@ export PROMPT_EOL_MARK=''
 export ZSH="~/.oh-my-zsh"
 
 # Load dotfiles
-source ~/.dotfiles/.load
+source $HOME/.dotfiles/.load
 
 # ZSH_Config
 ZSH_THEME="agnoster"
