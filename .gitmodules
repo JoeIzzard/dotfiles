@@ -4,3 +4,6 @@
 [submodule "Lib/Submodules/SSH-Helper"]
 	path = Lib/Submodules/SSH-Helper
 	url = https://github.com/JoeIzzard/SSH-Helper.git
+[submodule "Lib/Submodules/Useful-Scripts"]
+	path = Lib/Submodules/Useful-Scripts
+	url = https://github.com/JoeIzzard/Useful-Scripts.git

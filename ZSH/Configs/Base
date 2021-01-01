@@ -1,11 +1,14 @@
 # Initial Path
-export PATH="/usr/local/opt/python/libexec/bin:$PATH"
+export PATH="/usr/local/opt/python/libexec/bin:~/dotfiles/Lib/Submodules/Useful-Scripts/Bin:$PATH"
+
+# Disable EOL Mark
+export PROMPT_EOL_MARK=''
 
 # Path to your oh-my-zsh installation.
 export ZSH="~/.oh-my-zsh"
 
 # Load dotfiles
-source ~/.dotfiles/.load
+source $HOME/.dotfiles/.load
 
 # ZSH_Config
 ZSH_THEME="agnoster"

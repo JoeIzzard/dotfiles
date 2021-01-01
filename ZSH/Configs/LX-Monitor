@@ -1,8 +1,7 @@
-# Initial Path
-export PATH="/usr/local/opt/python/libexec/bin:~/dotfiles/Lib/Submodules/Useful-Scripts/Bin:$PATH"
-
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/joe/.oh-my-zsh"
+export ZSH="/home/joe/.oh-my-zsh"
+
+export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/home/monitor/LX-Monitor/Bin:~/dotfiles/Lib/Submodules/Useful-Scripts/Bin:$PATH"
 
 # Disable EOL Mark
 export PROMPT_EOL_MARK=''
