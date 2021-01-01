@@ -5,7 +5,7 @@ export PATH="/usr/local/opt/python/libexec/bin:~/dotfiles/Lib/Submodules/Useful-
 export PROMPT_EOL_MARK=''
 
 # Path to your oh-my-zsh installation.
-export ZSH="~/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Load dotfiles
 source $HOME/.dotfiles/.load
