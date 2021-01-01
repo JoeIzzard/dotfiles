@@ -8,8 +8,8 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 chsh -s $(which zsh)
 
 # Symlink Custom Dirs
-ln -s ~/.dotfiles/ZSH/Plugins ~/.oh-my-zsh/custom && mv ~/.oh-my-zsh/custom/Plugins ~/.oh-my-zsh/custom/plugins
-ln -s ~/.dotfiles/ZSH/Themes ~/.oh-my-zsh/custom && mv ~/.oh-my-zsh/custom/Themes ~/.oh-my-zsh/custom/themes
+rm -r ~/.oh-my-zsh/custom/plugins && ln -s -T ~/.dotfiles/ZSH/Plugins ~/.oh-my-zsh/custom/plugins
+rm -r ~/.oh-my-zsh/custom/themes && ln -s -T ~/.dotfiles/ZSH/Themes ~/.oh-my-zsh/custom/themes
 
 if [ -f ~/.dotfiles/ZSH/Configs/Base ]
 then

@@ -1,2 +1,5 @@
 
 \.extras
+**/.DS_Store
+Aliases/Enabled/*
+!Aliases/Enabled/.gitkeep
