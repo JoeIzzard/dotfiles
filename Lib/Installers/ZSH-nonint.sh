@@ -4,9 +4,6 @@
 echo "[ZSH Installer] Installing 'Oh My ZSH'..."
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 
-# Set Shell to ZSH
-chsh -s $(which zsh)
-
 # Symlink Custom Dirs
 rm -r ~/.oh-my-zsh/custom/plugins && ln -s -T ~/.dotfiles/ZSH/Plugins ~/.oh-my-zsh/custom/plugins
 rm -r ~/.oh-my-zsh/custom/themes && ln -s -T ~/.dotfiles/ZSH/Themes ~/.oh-my-zsh/custom/themes
