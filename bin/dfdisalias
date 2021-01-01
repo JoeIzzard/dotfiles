@@ -1,7 +1,5 @@
 #!/bin/bash
 
-#!/bin/bash
-
 # Help
 showHelp() {
     echo "dfdisalias"
